@@ -37,6 +37,7 @@ import com.example.jetnoteapp.components.NoteButton
 import com.example.jetnoteapp.components.NoteInputText
 import com.example.jetnoteapp.data.NotesDataSource
 import com.example.jetnoteapp.model.Note
+import com.example.jetnoteapp.util.formatDate
 import java.time.format.DateTimeFormatter
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -153,7 +154,7 @@ fun NoteRow(
                 style = MaterialTheme.typography.subtitle2)
             Text(text = note.description,
                 style = MaterialTheme.typography.subtitle1)
-            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")),
+            Text(text = formatDate(note.entryDate.time),
                 style = MaterialTheme.typography.caption)
         }
     }
